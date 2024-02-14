@@ -17,9 +17,19 @@ function createLinkedListNode() {
     const nextContainer = document.createElement('div');
     nextContainer.classList.add('node-next');
 
+    const arrowContainer = document.createElement("div");
+    const line = document.createElement("div");
+    line.classList.add('line')
+    const arrow = document.createElement("div");
+    arrow.classList.add('arrow')
+    arrowContainer.classList.add("arrow-container")
+    arrowContainer.appendChild(line)
+    arrowContainer.appendChild(arrow)
+
     // Append the data container and next container to the main container
     mainContainer.appendChild(dataContainer);
     mainContainer.appendChild(nextContainer);
+    mainContainer.appendChild(arrowContainer);
 
     return mainContainer
 }
@@ -37,6 +47,5 @@ addNodeBtnStart?.addEventListener("click", (e) => {
     const firstChild = document.getElementById("content")?.childNodes[1]
 
     linkedListContainer?.insertBefore(node, firstChild as ChildNode)
-
 })
 

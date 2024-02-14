@@ -1,6 +1,9 @@
 import Node from "./Node.js";
 
-class LinkedList {
+class LinkedList<T> {
+  private head: T | null;
+  private size: number;
+
   constructor() {
     this.head = null;
     this.size = 0;
@@ -8,7 +11,7 @@ class LinkedList {
 
   // adds an element at the end
   // of list
-  append(element) {
+  append(element: T) {
     // creates a new node
     let node = new Node(element);
 
@@ -18,6 +21,7 @@ class LinkedList {
     // if list is Empty add the
     // element and make it head
     if (this.head == null) this.head = node;
+
     else {
       current = this.head;
 

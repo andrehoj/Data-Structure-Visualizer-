@@ -22,6 +22,7 @@
   height: 50px;
   border: #0f0 1px solid;
   display: flex;
+  position: relative;
   gap: 35px;
   justify-content: center;
   align-items: center;
@@ -29,6 +30,17 @@
 
 .node > p {
   font-size: x-large;
+}
+
+.node-tail {
+  width: 75px;
+  height: 50px;
+  border: #0f0 1px solid;
+  display: flex;
+  position: relative;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
 }
 
 .node-data {
@@ -59,7 +71,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 140px;
+  width: 150px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #00ff00; /* green border */
@@ -93,7 +105,9 @@
 .arrow-container {
   position: absolute;
   width: 100px; /* Adjust as needed */
+  left: 100px
 }
+
 .arrow {
   width: 0;
   height: 0;
@@ -102,12 +116,12 @@
   border-left: 10px solid #00ff00; /* Change color as needed */
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: 90%;
   transform: translateY(-50%);
 }
 
 .line {
-  width: 80px; /* Adjust as needed */
+  width: 75px; /* Adjust as needed */
   height: 2px; /* Adjust as needed */
   background-color: #00ff00; /* Change color as needed */
   position: absolute;
@@ -115,3 +129,4 @@
   left: 20px; /* Should match the border-left width of the arrow */
   transform: translateY(-50%);
 }
+

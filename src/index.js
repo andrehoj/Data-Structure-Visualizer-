@@ -13,9 +13,18 @@ function createLinkedListNode() {
     // Create the div for the next node with class "node-next"
     const nextContainer = document.createElement('div');
     nextContainer.classList.add('node-next');
+    const arrowContainer = document.createElement("div");
+    const line = document.createElement("div");
+    line.classList.add('line');
+    const arrow = document.createElement("div");
+    arrow.classList.add('arrow');
+    arrowContainer.classList.add("arrow-container");
+    arrowContainer.appendChild(line);
+    arrowContainer.appendChild(arrow);
     // Append the data container and next container to the main container
     mainContainer.appendChild(dataContainer);
     mainContainer.appendChild(nextContainer);
+    mainContainer.appendChild(arrowContainer);
     return mainContainer;
 }
 addNodeBtnEnd === null || addNodeBtnEnd === void 0 ? void 0 : addNodeBtnEnd.addEventListener("click", function (e) {
