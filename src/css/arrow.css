@@ -1,0 +1,24 @@
+.node-arrow {
+  
+}
+
+
+.arrow-line {
+  width: 50px;
+  background-color: #0f0;
+  height: 2px;
+}
+
+.arrow-cross-top {
+  width: 20px;
+  background-color: #0f0;
+  height: 4px;
+  transform: rotate(35deg);
+}
+
+.arrow-cross-bottom {
+  width: 20px;
+  background-color: #0f0;
+  height: 4px;
+  transform: rotate(-35deg);
+}

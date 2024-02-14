@@ -1,0 +1,117 @@
+.btn {
+  background-color: #0f0;
+  color: #000000;
+  border: 1px solid #0f0;
+  padding: 12px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: #0f0;
+}
+
+.node {
+  width: 150px;
+  height: 50px;
+  border: #0f0 1px solid;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+.node > p {
+  font-size: x-large;
+}
+
+.node-data {
+  font-size: x-large;
+  border-right: #0f0 1px solid;
+  height: 100%;
+  display: flex;
+}
+
+.node-border {
+  border: #0f0 1px solid;
+  height: 100%;
+}
+
+.node-next {
+  border-radius: 50%;
+  background-color: #0f0;
+  width: 15px;
+  height: 15px;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.select-container select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 140px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #00ff00; /* green border */
+  background-color: #0f0f0f; /* dark background */
+  color: #00ff00; /* green text */
+  cursor: pointer;
+}
+
+/* Custom arrow */
+.select-container:after {
+  content: "\25BE"; /* Unicode for down arrow */
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 10px;
+  font-size: 16px;
+  color: #00ff00; /* green arrow color */
+  pointer-events: none;
+}
+
+/* Hover effect */
+.select-container:hover select {
+  border-color: #00ff00; /* green border on hover */
+}
+
+/* Focus styling */
+.select-container select:focus {
+  outline: none; /* Remove default outline */
+  border-color: #00ff00; /* Green border when focused */
+}
+
+.arrow-container {
+  position: absolute;
+  width: 100px; /* Adjust as needed */
+}
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #00ff00; /* Change color as needed */
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+.line {
+  width: 80px; /* Adjust as needed */
+  height: 2px; /* Adjust as needed */
+  background-color: #00ff00; /* Change color as needed */
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Should match the border-left width of the arrow */
+  transform: translateY(-50%);
+}

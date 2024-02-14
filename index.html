@@ -9,7 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="stylesheet" href="src/css/arrow.css" />
     <title>Linked List</title>
   </head>
   <body
@@ -19,93 +20,57 @@
       color: #4af626;
     "
   >
-    <h1 style="text-align: center; font-size: 64px;">Linked List Visualization</h1>
-    <div style="display: flex; justify-content: center; gap: 12px">
-      <button class="btn">Append Node</button>
-      
+    <h1 style="text-align: center; font-size: 64px">Singly Linked List</h1>
+    <h2 style="text-align: center;" >List length: <span id="list-length">2</span> </h2>
+    <div
+      style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap"
+    >
+
+  
+      <button class="btn" id="insert-node-start">insert at start</button>
+      <button class="btn" id="insert-node-end">insert at end</button>
     </div>
+
+    <div class="select-container">
+      <select class="select-container">
+        <option value="1">Linked List</option>
+        <option value="2">Stack</option>
+        <option value="3">Queue</option>
+      </select>
+    </div>
+
     <div
       id="content"
-      style="width: 100%; display: flex; justify-content: center"
+      style="
+        width: 100%;
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      "
     >
-      <svg width="500" height="500">
-        <g class="links"></g>
-        <g class="nodes"></g>
-      </svg>
-    </div>
+    
+      <div class="node">
+        <p>data</p>
+        <div class="node-next"></div>   
+        <div class="arrow-container">
+          <div class="arrow"></div>
+          <div class="line"></div>
+        </div>
+      </div>
 
-    <script type="module">
-      import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+      
+      <div class="node">
+        <p>data</p>
+        <div class="node-next"></div>   
+        <div class="arrow-container">
+          <div class="arrow"></div>
+          <div class="line"></div>
+        </div>
+      </div>
 
-      var width = 500,
-        height = 500;
+   
 
-      var nodes = [
-        { name: "Node 1" },
-        { name: "Node 2" },
-        { name: "Node 3" },
-        { name: "Node 4" },
-        { name: "Node 5" },
-      ];
-
-      var links = [
-        { source: 0, target: 1 },
-        { source: 1, target: 2 },
-        { source: 2, target: 3 },
-        { source: 3, target: 4 },
-      ];
-
-      var simulation = d3
-        .forceSimulation(nodes)
-        .force("charge", d3.forceManyBody().strength(-300))
-        .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("link", d3.forceLink().links(links))
-        .on("tick", ticked);
-
-      function updateLinks() {
-        let u = d3
-          .select(".links")
-          .selectAll("line")
-          .data(links)
-          .join("line")
-          .attr("x1", function (d) {
-            return d.source.x;
-          })
-          .attr("y1", function (d) {
-            return d.source.y;
-          })
-          .attr("x2", function (d) {
-            return d.target.x;
-          })
-          .attr("y2", function (d) {
-            return d.target.y;
-          });
-      }
-
-      function updateNodes() {
-        let u = d3
-          .select(".nodes")
-          .selectAll("text")
-          .data(nodes)
-          .join("text")
-          .text(function (d) {
-            return d.name;
-          })
-          .attr("x", function (d) {
-            return d.x;
-          })
-          .attr("y", function (d) {
-            return d.y;
-          })
-          .attr("dy", function (d) {
-            return 5;
-          });
-      }
-
-      function ticked() {
-        updateLinks();
-        updateNodes();
-      }
-    </script>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>
