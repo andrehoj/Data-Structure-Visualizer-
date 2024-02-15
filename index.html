@@ -2,55 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="src/css/reset.css" />
+
     <link rel="stylesheet" href="src/css/index.css" />
-    <link rel="stylesheet" href="src/css/arrow.css" />
+    <!-- <link rel="stylesheet" href="src/css/arrow.css" /> -->
+    <link rel="stylesheet" href="src/css/linkedList/node.css" />
     <title>Linked List</title>
   </head>
   <body
     style="
       font-family: 'VT323', monospace;
-      background-color: rgb(0, 0, 0);
+      background-color: rgb(14, 12, 12);
       color: #4af626;
     "
   >
     <h1 style="text-align: center; font-size: 60px">Singly Linked List</h1>
 
-    <div style="display: flex; justify-content: center"> <div class="select-container">
-      
-      <select class="select-container">
-        <option value="1">Linked List</option>
-        <option value="2">Stack</option>
-        <option value="3">Queue</option>
-        <option value="3">Tree</option>
-        <option value="3">Graph</option>
-      </select>
-    </div></div>
+    <div style="display: flex; justify-content: center">
+      <div class="select-container">
+        <select class="select-container">
+          <option value="1">Linked List</option>
+          <option value="2">Stack</option>
+          <option value="3">Queue</option>
+          <option value="4">Tree</option>
+          <option value="5">Graph</option>
+        </select>
+      </div>
+    </div>
 
-    <h2 style="text-align: center;" >List length: <span id="list-length">2</span> 
+    <h2 style="text-align: center">
+      List length: <span id="list-length"></span>
     </h2>
     <div
       style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap"
     >
-    
       <button class="btn" id="insert-node-start">insert at start</button>
       <button class="btn" id="insert-node-end">insert at end</button>
 
-       <div class="terminal">
+      <div class="terminal">
         <p>Welcome to the DS Terminal</p>
         <p>Initializing sequence...</p>
         <p>Access granted.</p>
         <div class="prompt">|</div>
       </div>
-       
 
-        <!-- <input type="text" class="input-field" placeholder="insert at">
+      <!-- <input type="text" class="input-field" placeholder="insert at">
         <button class="btn">Insert</button> -->
     </div>
 
@@ -61,36 +64,54 @@
         margin-top: 100px;
         display: flex;
         justify-content: center;
-        gap: 35px;
+        gap: 70px;
       "
     >
+      <div class="head-container">
+        <div class="node_inner_container">
+          <div class="head">
+            <p>Head</p>
 
-    <div class="head-node"><p>Head</p> <div class="arrow-container">
-      <div class="arrow"></div>
-      <div class="line"></div>
-    </div></div>
-    
-      <div class="node">
-        <p>data</p>
-        <div class="node-next"></div>   
-        <div class="arrow-container">
-          <div class="arrow"></div>
-          <div class="line"></div>
+            <div class="arrow-container">
+              <div class="head_arrow"></div>
+              <div class="head_line"></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      
-      <div class="node">
-        <p>data</p>
-        <div class="node-next"></div>   
-        <div class="arrow-container">
-          <div class="arrow"></div>
-          <div class="line"></div>
+      <div class="node_container">
+        <div class="node_inner_container">
+          <div class="node_data"><p>15</p></div>
+          <div class="node_next_container">
+            <div class="node_next">
+              <div class="arrow-container">
+                <div class="arrow"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="node-tail"><p>Null</p></div>   
-      </div> </div>
+      <div class="node_container">
+        <div class="node_inner_container">
+          <div class="node_data"><p>659</p></div>
+          <div class="node_next_container">
+            <div class="node_next">
+              <div class="arrow-container">
+                <div class="arrow"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tail-container">
+        <div class="tail"></div>
+      </div>
+    </div>
 
     <script type="module" src="src/index.js"></script>
   </body>

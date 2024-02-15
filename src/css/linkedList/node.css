@@ -1,0 +1,158 @@
+.node_container {
+  font-size: 25px;
+  border: #0f0 1px solid;
+  height: 45px;
+  animation: append-node 0.3s linear;
+}
+
+.head {
+  position: relative;
+  font-size: 25px;
+}
+
+.head_line {
+  width: 35px;
+  height: 2px;
+  background-color: #00ff00;
+  position: absolute;
+  left: 60px;
+  top: 10px;
+  transform: translateY(-50%);
+  /* animation-duration: 0.3s;
+  animation-name: arrow_line_animation;
+  animation-delay: 0.3s; */
+}
+
+.head_arrow {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #00ff00; /* Change color as needed */
+  position: absolute;
+  left: 90%;
+  top: 10px;
+  transform: translateY(-50%);
+}
+
+.node_inner_container {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  height: 100%;
+}
+
+.node_data {
+  padding: 0px 20px;
+  border-right: #0f0 1px solid;
+  height: 100%;
+  display: flex;
+}
+
+.node_data > p {
+  align-self: center;
+}
+
+.node_next_container {
+  align-self: center;
+  padding: 0px 10px;
+}
+
+.node_next {
+  border-radius: 50%;
+  background-color: #0f0;
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.arrow-container {
+  position: absolute;
+  width: 100px; /* Adjust as needed */
+  left: -10px;
+  top: 5px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #00ff00; /* Change color as needed */
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translateY(-50%);
+}
+
+.line {
+  width: 75px; /* Adjust as needed */
+  height: 2px; /* Adjust as needed */
+  background-color: #00ff00; /* Change color as needed */
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Should match the border-left width of the arrow */
+  transform: translateY(-50%);
+  animation-duration: 0.3s;
+  animation-name: arrow_line_animation;
+  animation-delay: 0.3s;
+}
+
+.tail-container {
+  position: relative;
+}
+
+.tail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  border: #00ff00 1px solid;
+}
+
+.tail::before,
+.tail::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 1px;
+  background-color: #00ff00;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.tail::after {
+  width: 65px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@keyframes append-node {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes arrow_line_animation {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 75px;
+  }
+}
+
+@keyframes arrow_head_animation {
+  from {
+  }
+  to {
+  }
+}
