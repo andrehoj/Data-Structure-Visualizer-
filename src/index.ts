@@ -1,5 +1,6 @@
 const addNodeBtnStart = document.getElementById("insert-node-start")
 const addNodeBtnEnd = document.getElementById("insert-node-end")
+const insertNodeAtIndexBtn = document.getElementById("insert-at-location");
 const listLengthSpan = document.getElementById("list-length")
 
 const linkedListContainer = document.getElementById("content");
@@ -17,7 +18,7 @@ function createLinkedListNode(data: number) {
     const nodeData = document.createElement('div');
     nodeData.classList.add('node_data');
     const paragraph = document.createElement('p');
-    paragraph.textContent = data;
+    paragraph.textContent = data.toString();
     nodeData.appendChild(paragraph);
 
     // Create next container div
@@ -66,7 +67,21 @@ addNodeBtnStart?.addEventListener("click", (e) => {
     linkedListContainer?.insertBefore(node, firstChild as ChildNode)
 })
 
+insertNodeAtIndexBtn?.addEventListener("click", (e) => {
+    e.stopPropagation()
+    const value = document.getElementById("insert-value-input")?.value
+    const index = document.getElementById("insert-index-input")?.value
 
-function insertNodeAtIndex(index: number) {
+    insertNodeAtIndex(index, value)
+})
+
+
+
+function insertNodeAtIndex(index: number, value: number) {
+    const node = createLinkedListNode(value)
+
+    const childNodes = document.getElementById("content")?.children;
+
+    if (childNodes) linkedListContainer?.insertBefore(node, childNodes[index])
 
 }

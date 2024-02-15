@@ -1,6 +1,7 @@
 "use strict";
 const addNodeBtnStart = document.getElementById("insert-node-start");
 const addNodeBtnEnd = document.getElementById("insert-node-end");
+const insertNodeAtIndexBtn = document.getElementById("insert-at-location");
 const listLengthSpan = document.getElementById("list-length");
 const linkedListContainer = document.getElementById("content");
 function createLinkedListNode(data) {
@@ -14,7 +15,7 @@ function createLinkedListNode(data) {
     const nodeData = document.createElement('div');
     nodeData.classList.add('node_data');
     const paragraph = document.createElement('p');
-    paragraph.textContent = data;
+    paragraph.textContent = data.toString();
     nodeData.appendChild(paragraph);
     // Create next container div
     const nextContainer = document.createElement('div');
@@ -55,5 +56,17 @@ addNodeBtnStart === null || addNodeBtnStart === void 0 ? void 0 : addNodeBtnStar
     const firstChild = (_a = document.getElementById("content")) === null || _a === void 0 ? void 0 : _a.childNodes[2];
     linkedListContainer === null || linkedListContainer === void 0 ? void 0 : linkedListContainer.insertBefore(node, firstChild);
 });
-function insertNodeAtIndex(index) {
+insertNodeAtIndexBtn === null || insertNodeAtIndexBtn === void 0 ? void 0 : insertNodeAtIndexBtn.addEventListener("click", (e) => {
+    var _a, _b;
+    e.stopPropagation();
+    const value = (_a = document.getElementById("insert-value-input")) === null || _a === void 0 ? void 0 : _a.value;
+    const index = (_b = document.getElementById("insert-index-input")) === null || _b === void 0 ? void 0 : _b.value;
+    insertNodeAtIndex(index, value);
+});
+function insertNodeAtIndex(index, value) {
+    var _a;
+    const node = createLinkedListNode(value);
+    const childNodes = (_a = document.getElementById("content")) === null || _a === void 0 ? void 0 : _a.children;
+    if (childNodes)
+        linkedListContainer === null || linkedListContainer === void 0 ? void 0 : linkedListContainer.insertBefore(node, childNodes[index]);
 }
