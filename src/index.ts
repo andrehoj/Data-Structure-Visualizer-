@@ -37,15 +37,20 @@ function createLinkedListNode() {
 addNodeBtnEnd?.addEventListener("click", function (e) {
     e.stopPropagation()
     const node = createLinkedListNode()
-    linkedListContainer?.appendChild(node)
+    const childNodes = document.getElementById("content")?.childNodes
+
+    if (childNodes?.length) linkedListContainer?.insertBefore(node, childNodes[childNodes?.length - 2])
 })
 
 addNodeBtnStart?.addEventListener("click", (e) => {
     e.stopPropagation();
     const node = createLinkedListNode();
 
-    const firstChild = document.getElementById("content")?.childNodes[1]
-
+    const firstChild = document.getElementById("content")?.childNodes[2]
     linkedListContainer?.insertBefore(node, firstChild as ChildNode)
 })
 
+
+function insertNodeAtIndex(index: number) {
+    
+}

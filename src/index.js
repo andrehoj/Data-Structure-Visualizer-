@@ -28,14 +28,19 @@ function createLinkedListNode() {
     return mainContainer;
 }
 addNodeBtnEnd === null || addNodeBtnEnd === void 0 ? void 0 : addNodeBtnEnd.addEventListener("click", function (e) {
+    var _a;
     e.stopPropagation();
     const node = createLinkedListNode();
-    linkedListContainer === null || linkedListContainer === void 0 ? void 0 : linkedListContainer.appendChild(node);
+    const childNodes = (_a = document.getElementById("content")) === null || _a === void 0 ? void 0 : _a.childNodes;
+    if (childNodes === null || childNodes === void 0 ? void 0 : childNodes.length)
+        linkedListContainer === null || linkedListContainer === void 0 ? void 0 : linkedListContainer.insertBefore(node, childNodes[(childNodes === null || childNodes === void 0 ? void 0 : childNodes.length) - 2]);
 });
 addNodeBtnStart === null || addNodeBtnStart === void 0 ? void 0 : addNodeBtnStart.addEventListener("click", (e) => {
     var _a;
     e.stopPropagation();
     const node = createLinkedListNode();
-    const firstChild = (_a = document.getElementById("content")) === null || _a === void 0 ? void 0 : _a.childNodes[1];
+    const firstChild = (_a = document.getElementById("content")) === null || _a === void 0 ? void 0 : _a.childNodes[2];
     linkedListContainer === null || linkedListContainer === void 0 ? void 0 : linkedListContainer.insertBefore(node, firstChild);
 });
+function insertNodeAtIndex(index) {
+}
