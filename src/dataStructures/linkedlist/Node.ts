@@ -1,8 +1,13 @@
-class Node<T> {
-  private element: T
-  private next: T | null;
+export interface nodetype {
+  element: number;
+  next: nodetype | null;
+}
 
-  constructor(element: T) {
+class Node implements nodetype {
+  element: number;
+  next: nodetype | null;
+
+  constructor(element: number) {
     this.element = element;
     this.next = null;
   }

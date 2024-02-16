@@ -55,9 +55,9 @@
   width: 150px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #00ff00; /* green border */
+  border: 1px solid #0f0; /* green border */
   background-color: #0f0f0f; /* dark background */
-  color: #00ff00; /* green text */
+  color: #0f0; /* green text */
   cursor: pointer;
 }
 
@@ -68,26 +68,26 @@
   top: calc(50% - 8px);
   right: 10px;
   font-size: 16px;
-  color: #00ff00; /* green arrow color */
+  color: #0f0; /* green arrow color */
   pointer-events: none;
 }
 
 /* Hover effect */
 .select-container:hover select {
-  border-color: #00ff00; /* green border on hover */
+  border-color: #0f0; /* green border on hover */
 }
 
 /* Focus styling */
 .select-container select:focus {
   outline: none; /* Remove default outline */
-  border-color: #00ff00; /* Green border when focused */
+  border-color: #0f0; /* Green border when focused */
 }
 
 .input-field {
-  color: #00ff00;
+  color: #0f0;
   border: none;
   background-color: inherit;
-  border: 1px solid #00ff00;
+  border: 1px solid #0f0;
   padding: 10px;
   font-size: 16px;
   outline: none;
@@ -104,3 +104,18 @@
   top: 0;
   left: 0;
 }
+
+.hacker-input {
+  padding: 5px;
+  border: 1px solid #0f0; /* Green border */
+  background-color: #000; /* Black background */
+  color: #0f0; /* Green text */
+  font-family: monospace; /* Monospace font for hacker vibe */
+  font-size: 14px; /* Adjust font size as needed */
+  box-shadow: 0 0  3px #0f0; /* Green glow effect */
+}
+
+.hacker-input:focus {
+    outline: none;
+}
+

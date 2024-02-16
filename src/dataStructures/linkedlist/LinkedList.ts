@@ -1,7 +1,8 @@
-import Node from "./Node.js";
+import Node from "./Node";
+import { nodetype } from "./Node";
 
-class LinkedList<T> {
-  private head: T | null;
+class LinkedList {
+  private head: nodetype | null;
   private size: number;
 
   constructor() {
@@ -11,18 +12,18 @@ class LinkedList<T> {
 
   // adds an element at the end
   // of list
-  append(element: T) {
+  append(element: number) {
     // creates a new node
     let node = new Node(element);
 
     // to store current node
-    let current;
+    let current: nodetype | null = null;
 
     // if list is Empty add the
     // element and make it head
-    if (this.head == null) this.head = node;
-
-    else {
+    if (this.head == null) {
+      this.head = node
+    } else {
       current = this.head;
 
       // iterate to the end of the
@@ -30,7 +31,6 @@ class LinkedList<T> {
       while (current.next) {
         current = current.next;
       }
-
       // add node
       current.next = node;
     }
@@ -39,9 +39,8 @@ class LinkedList<T> {
 
   // insert element at the position index
   // of the list
-  insertAt(element, index) {
-    if (index < 0 || index > this.size)
-      return console.log("Please enter a valid index.");
+  insertAt(element: number, index: number) {
+    if (index < 0 || index > this.size) { return console.log("Please enter a valid index.") }
     else {
       // creates a new node
       let node = new Node(element);
@@ -63,12 +62,12 @@ class LinkedList<T> {
         while (iterator < index) {
           iterator++;
           previous = current;
-          current = current.next;
+          if (current) current = current.next;
         }
 
         // adding an element
         node.next = current;
-        previous.next = node;
+        if (previous) previous.next = node;
       }
 
       this.size++;
@@ -77,7 +76,7 @@ class LinkedList<T> {
 
   // removes an element from the
   // specified location
-  removeFrom(index) {
+  removeFrom(index: number) {
     if (index < 0 || index >= this.size)
       return console.log("Please Enter a valid index");
 
@@ -87,28 +86,29 @@ class LinkedList<T> {
 
     // deleting first element
     if (index === 0) {
-      this.head = current.next;
+      if (current) this.head = current.next;
+
     } else {
       // iterate over the list to the
       // position to remove an element
       while (iterator < index) {
         iterator++;
         previous = current;
-        current = current.next;
+        if (current) current = current.next;
       }
 
       // remove the element
-      previous.next = current.next;
+      if (previous && current) previous.next = current.next;
     }
     this.size--;
 
     // return the remove element
-    return current.element;
+    if (current) return current.element;
   }
 
   // removes a given element from the
   // list
-  removeElement(element) {
+  removeElement(element: number) {
     let current = this.head;
     let previous = null;
 
@@ -138,7 +138,7 @@ class LinkedList<T> {
   }
 
   // finds the index of element
-  indexOf(element) {
+  indexOf(element: number) {
     let count = 0;
     let current = this.head;
 
@@ -162,7 +162,7 @@ class LinkedList<T> {
 
   // prints the size of the list
   size_of_list() {
-    console.log(this.size);
+    return this.size;
   }
 
   // prints the list items
@@ -178,4 +178,3 @@ class LinkedList<T> {
   }
 }
 
-export default LinkedList;

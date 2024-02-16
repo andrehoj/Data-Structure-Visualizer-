@@ -10,9 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/css/reset.css" />
-
     <link rel="stylesheet" href="src/css/index.css" />
-    <!-- <link rel="stylesheet" href="src/css/arrow.css" /> -->
     <link rel="stylesheet" href="src/css/linkedList/node.css" />
     <title>Linked List</title>
   </head>
@@ -53,43 +51,51 @@
     <div
       style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap"
     >
-      <button class="btn" id="insert-node-start">insert start</button>
 
-      <div style="display: flex; flex-direction: column; margin: 5px; padding: 5px; border: 1px solid lime" id="insert-at-form">
-        <label style="text-align: center;" for="insert-index">Index</label>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          margin: 5px;
+          padding: 15px;
+          border: 1px solid lime;
+        "
+        id="insert-at-form"
+      >
+      <button  style="margin-bottom: 10px" class="btn" type="submit" id="insert-at-location">
+        insert
+      </button>
+        <label style="text-align: center" for="insert-index">Index</label>
         <input
+          class="hacker-input"
           type="number"
           class="input-field"
           name="insert-index"
           id="insert-index-input"
         />
 
-        <label style="text-align: center; " for="insert-value">value</label>
+        <label style="text-align: center" for="insert-value">value</label>
         <input
-        style="margin-bottom: 10px;"
+         
           type="number"
-          class="input-field"
+          class="hacker-input"
           name="insert-value"
           id="insert-value-input"
         />
 
-        <button class="btn" type="submit" id="insert-at-location">
-          insert
-        </button>
+       
       </div>
 
-      <button class="btn" id="insert-node-end">insert end</button>
 
       <div class="terminal">
         <p>Welcome to the DS Terminal</p>
         <p>Initializing sequence...</p>
         <p>Access granted.</p>
-        <!-- <div class="prompt">|</div> -->
       </div>
     </div>
 
     <div
-      id="content"
+      id="ll-container"
       style="
         width: 100%;
         margin-top: 100px;
@@ -99,7 +105,7 @@
         flex-wrap: wrap;
       "
     >
-      <span class="head-container">
+      <span style="border: none;" class="node_container">
         <div class="node_inner_container">
           <div class="head">
             <p>Head</p>
@@ -111,7 +117,7 @@
         </div>
       </span>
 
-      <div class="node_container">
+      <!-- <div class="node_container">
         <div class="node_inner_container">
           <div class="node_data"><p>26</p></div>
           <div class="node_next_container">
@@ -123,15 +129,13 @@
             </div>
           </div>
         </div>
-      </div>
-
-     
+      </div> -->
 
       <span class="tail-container">
         <div class="tail"></div>
       </span>
     </div>
 
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="dist/index.js"></script>
   </body>
 </html>

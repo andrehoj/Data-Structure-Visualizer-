@@ -1,25 +1,21 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const Node_js_1 = __importDefault(require("./Node.js"));
-class LinkedList {
-    constructor() {
+import Node from "./Node";
+var LinkedList = /** @class */ (function () {
+    function LinkedList() {
         this.head = null;
         this.size = 0;
     }
     // adds an element at the end
     // of list
-    append(element) {
+    LinkedList.prototype.append = function (element) {
         // creates a new node
-        let node = new Node_js_1.default(element);
+        var node = new Node(element);
         // to store current node
-        let current;
+        var current = null;
         // if list is Empty add the
         // element and make it head
-        if (this.head == null)
+        if (this.head == null) {
             this.head = node;
+        }
         else {
             current = this.head;
             // iterate to the end of the
@@ -31,16 +27,17 @@ class LinkedList {
             current.next = node;
         }
         this.size++;
-    }
+    };
     // insert element at the position index
     // of the list
-    insertAt(element, index) {
-        if (index < 0 || index > this.size)
+    LinkedList.prototype.insertAt = function (element, index) {
+        if (index < 0 || index > this.size) {
             return console.log("Please enter a valid index.");
+        }
         else {
             // creates a new node
-            let node = new Node_js_1.default(element);
-            let current, previous;
+            var node = new Node(element);
+            var current = void 0, previous = void 0;
             current = this.head;
             // add the element to the
             // first index
@@ -50,30 +47,33 @@ class LinkedList {
             }
             else {
                 current = this.head;
-                let iterator = 0;
+                var iterator = 0;
                 // iterate over the list to find
                 // the position to insert
                 while (iterator < index) {
                     iterator++;
                     previous = current;
-                    current = current.next;
+                    if (current)
+                        current = current.next;
                 }
                 // adding an element
                 node.next = current;
-                previous.next = node;
+                if (previous)
+                    previous.next = node;
             }
             this.size++;
         }
-    }
+    };
     // removes an element from the
     // specified location
-    removeFrom(index) {
+    LinkedList.prototype.removeFrom = function (index) {
         if (index < 0 || index >= this.size)
             return console.log("Please Enter a valid index");
-        let current = this.head, previous = current, iterator = 0;
+        var current = this.head, previous = current, iterator = 0;
         // deleting first element
         if (index === 0) {
-            this.head = current.next;
+            if (current)
+                this.head = current.next;
         }
         else {
             // iterate over the list to the
@@ -81,20 +81,23 @@ class LinkedList {
             while (iterator < index) {
                 iterator++;
                 previous = current;
-                current = current.next;
+                if (current)
+                    current = current.next;
             }
             // remove the element
-            previous.next = current.next;
+            if (previous && current)
+                previous.next = current.next;
         }
         this.size--;
         // return the remove element
-        return current.element;
-    }
+        if (current)
+            return current.element;
+    };
     // removes a given element from the
     // list
-    removeElement(element) {
-        let current = this.head;
-        let previous = null;
+    LinkedList.prototype.removeElement = function (element) {
+        var current = this.head;
+        var previous = null;
         // iterate over the list
         while (current != null) {
             // comparing element with current
@@ -118,11 +121,11 @@ class LinkedList {
             current = current.next;
         }
         return -1;
-    }
+    };
     // finds the index of element
-    indexOf(element) {
-        let count = 0;
-        let current = this.head;
+    LinkedList.prototype.indexOf = function (element) {
+        var count = 0;
+        var current = this.head;
         // iterate over the list
         while (current != null) {
             // compare each element of the list
@@ -134,24 +137,24 @@ class LinkedList {
         }
         // not found
         return -1;
-    }
+    };
     // checks the list for empty
-    isEmpty() {
+    LinkedList.prototype.isEmpty = function () {
         return this.size === 0;
-    }
+    };
     // prints the size of the list
-    size_of_list() {
-        console.log(this.size);
-    }
+    LinkedList.prototype.size_of_list = function () {
+        return this.size;
+    };
     // prints the list items
-    printList() {
-        let current = this.head;
-        let str = "";
+    LinkedList.prototype.printList = function () {
+        var current = this.head;
+        var str = "";
         while (current) {
             str += current.element + " ";
             current = current.next;
         }
         console.log(str);
-    }
-}
-exports.default = LinkedList;
+    };
+    return LinkedList;
+}());
