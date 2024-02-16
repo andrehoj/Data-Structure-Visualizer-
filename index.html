@@ -51,7 +51,6 @@
     <div
       style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap"
     >
-
       <div
         style="
           display: flex;
@@ -62,9 +61,14 @@
         "
         id="insert-at-form"
       >
-      <button  style="margin-bottom: 10px" class="btn" type="submit" id="insert-at-location">
-        insert
-      </button>
+        <button
+          style="margin-bottom: 10px"
+          class="btn"
+          type="submit"
+          id="insert-at-location"
+        >
+          insert
+        </button>
         <label style="text-align: center" for="insert-index">Index</label>
         <input
           class="hacker-input"
@@ -76,16 +80,12 @@
 
         <label style="text-align: center" for="insert-value">value</label>
         <input
-         
           type="number"
           class="hacker-input"
           name="insert-value"
           id="insert-value-input"
         />
-
-       
       </div>
-
 
       <div class="terminal">
         <p>Welcome to the DS Terminal</p>
@@ -94,18 +94,8 @@
       </div>
     </div>
 
-    <div
-      id="ll-container"
-      style="
-        width: 100%;
-        margin-top: 100px;
-        display: flex;
-        justify-content: center;
-        gap: 70px;
-        flex-wrap: wrap;
-      "
-    >
-      <span style="border: none;" class="node_container">
+    <div id="ll-container" class="ll-container">
+      <span id="head_node" class="head_container">
         <div class="node_inner_container">
           <div class="head">
             <p>Head</p>
@@ -117,21 +107,7 @@
         </div>
       </span>
 
-      <!-- <div class="node_container">
-        <div class="node_inner_container">
-          <div class="node_data"><p>26</p></div>
-          <div class="node_next_container">
-            <div class="node_next">
-              <div class="arrow-container">
-                <div class="arrow"></div>
-                <div class="line"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <span class="tail-container">
+      <span id="tail_node" class="tail-container">
         <div class="tail"></div>
       </span>
     </div>

@@ -5,6 +5,12 @@
   animation: append-node 0.3s linear;
 }
 
+.head_container {
+  font-size: 25px;
+  height: 45px;
+  animation: append-node 0.3s linear;
+}
+
 .head {
   position: relative;
   font-size: 25px;
@@ -33,7 +39,6 @@
   left: 100%;
   top: 10px;
   transform: translateY(-50%);
- 
 }
 
 .node_inner_container {
@@ -85,7 +90,7 @@
   left: 90%;
   transform: translateY(-50%);
   animation-name: arrow_head;
-  animation-delay: .9s;
+  animation-delay: 0.9s;
 }
 
 .line {

@@ -23,6 +23,7 @@ class LinkedList {
     llContainer: HTMLDivElement
     insertNodeAtIndexBtn: HTMLElement
 
+
     constructor() {
         this.head = null
         this.size = 0;
@@ -46,14 +47,24 @@ class LinkedList {
     }
 
     // adds an node to the end of the list
-    insertAtIndex(value: number = 69, index: number = 0) {
-        const domNode = this.createLLDomNode(value)
+    insertAtIndex(value: number, index: number) {
+        if (!value) throw new Error("invalid value")
+        try {
+            const domNode = this.createLLDomNode(value)
 
-        const children = document.getElementsByClassName("node_container");
+            const tailNode = document.getElementById("tail_node")
 
-        this.llContainer?.insertBefore(domNode, children[index - 1]);
-        this.size++;
-        console.log(this.size)
+            // if length is 2, there is only head and tail
+            if (this.llContainer.children.length === 2) { this.llContainer.insertBefore(domNode, tailNode) } else {
+                if (index < 0 || index > this.size + 1) throw new Error("invalid linkedList index");
+                this.llContainer?.insertBefore(domNode, this.llContainer.children[index === 0 ? 1 : index]);
+            }
+
+            this.size++;
+        } catch (error) {
+            console.log(error)
+        }
+
     };
 
     private createLLDomNode(value: number) {

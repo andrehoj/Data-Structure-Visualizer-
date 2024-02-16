@@ -17,17 +17,6 @@
   color: #0f0;
 }
 
-.head-node {
-  width: 150px;
-  height: 50px;
-  font-size: larger;
-  display: flex;
-  position: relative;
-  gap: 35px;
-  justify-content: center;
-  align-items: center;
-}
-
 .node > p {
   font-size: x-large;
 }
@@ -112,10 +101,18 @@
   color: #0f0; /* Green text */
   font-family: monospace; /* Monospace font for hacker vibe */
   font-size: 14px; /* Adjust font size as needed */
-  box-shadow: 0 0  3px #0f0; /* Green glow effect */
+  box-shadow: 0 0 3px #0f0; /* Green glow effect */
 }
 
 .hacker-input:focus {
-    outline: none;
+  outline: none;
 }
 
+.ll-container {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+}

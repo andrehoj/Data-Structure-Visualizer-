@@ -28,13 +28,25 @@ var LinkedList = /** @class */ (function () {
     // adds an node to the end of the list
     LinkedList.prototype.insertAtIndex = function (value, index) {
         var _a;
-        if (value === void 0) { value = 69; }
-        if (index === void 0) { index = 0; }
-        var domNode = this.createLLDomNode(value);
-        var children = document.getElementsByClassName("node_container");
-        (_a = this.llContainer) === null || _a === void 0 ? void 0 : _a.insertBefore(domNode, children[index - 1]);
-        this.size++;
-        console.log(this.size);
+        if (!value)
+            throw new Error("invalid value");
+        try {
+            var domNode = this.createLLDomNode(value);
+            var tailNode = document.getElementById("tail_node");
+            // if length is 2, there is only head and tail
+            if (this.llContainer.children.length === 2) {
+                this.llContainer.insertBefore(domNode, tailNode);
+            }
+            else {
+                if (index < 0 || index > this.size + 1)
+                    throw new Error("invalid linkedList index");
+                (_a = this.llContainer) === null || _a === void 0 ? void 0 : _a.insertBefore(domNode, this.llContainer.children[index === 0 ? 1 : index]);
+            }
+            this.size++;
+        }
+        catch (error) {
+            console.log(error);
+        }
     };
     ;
     LinkedList.prototype.createLLDomNode = function (value) {
