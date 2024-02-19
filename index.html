@@ -12,7 +12,11 @@
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/index.css" />
     <link rel="stylesheet" href="src/css/linkedList/node.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <title>Linked List</title>
   </head>
   <body
@@ -48,8 +52,27 @@
         </div>
       </div>
     </div>
-    <p style="text-align:center;margin-bottom:12px" >List Size: <span id="size-display"></span></p>
+    <p style="text-align: center; margin-bottom: 12px">
+      List Size: <span id="size-display"></span>
+    </p>
 
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 15px;
+      "
+    >
+      <div class="node_container" style="width: fit-content">
+        <div class="node_inner_container">
+          <div class="node_data"><p>Data</p></div>
+          <div class="node_next_container">
+            <p>Next</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div
       style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap"
     >
@@ -89,6 +112,42 @@
         />
       </div>
 
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          margin: 5px;
+          padding: 15px;
+          border: 1px solid lime;
+        "
+        id="remove-form"
+      >
+        <button
+          style="margin-bottom: 10px"
+          class="btn"
+          type="submit"
+          id="remove-node-btn"
+        >
+          remove
+        </button>
+        <label style="text-align: center" for="insert-index">By Index</label>
+        <input
+          class="hacker-input"
+          type="number"
+          class="input-field"
+          name="insert-index"
+          id="remove-index-input"
+        />
+
+        <label style="text-align: center" for="insert-value">By value</label>
+        <input
+          type="number"
+          class="hacker-input"
+          name="insert-value"
+          id="remove-value-input"
+        />
+      </div>
+
       <div class="terminal">
         <p>Welcome to the DS Terminal</p>
         <p>Initializing sequence...</p>
@@ -108,6 +167,48 @@
           </div>
         </div>
       </span>
+
+      <div class="node_container walkthrough-animation">
+        <div class="node_inner_container">
+          <div class="node_data"><p>1</p></div>
+          <div class="node_next_container">
+            <div class="node_next">
+              <div class="arrow-container">
+                <div class="arrow"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="node_container walkthrough-animation">
+        <div class="node_inner_container">
+          <div class="node_data"><p>2</p></div>
+          <div class="node_next_container">
+            <div class="node_next">
+              <div class="arrow-container">
+                <div class="arrow"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="node_container walkthrough-animation">
+        <div class="node_inner_container">
+          <div class="node_data"><p>3</p></div>
+          <div class="node_next_container">
+            <div class="node_next">
+              <div class="arrow-container">
+                <div class="arrow"></div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <span id="tail_node" class="tail-container">
         <div class="tail"></div>
