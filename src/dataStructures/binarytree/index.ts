@@ -55,8 +55,11 @@ class BinarySearchTree {
 
     inOrderTraversalNode(edge: edgeType, callBack: (key: number) => void) {
         if (edge !== null) {
+            console.log('Line 58: Value of edge.key = ' + edge.key)
             this.inOrderTraversalNode(edge.left as edgeType, callBack)
+            console.log('Line 60: Value of edge.key = ' + edge.key)
             callBack(edge.key as number)
+            console.log('Line 62: Value of edge.key = ' + edge.key)
             this.inOrderTraversalNode(edge.right as edgeType, callBack)
         }
     };
@@ -91,6 +94,49 @@ class BinarySearchTree {
             }
     }
 
+    findMinValue() {
+        let currentEdge = this.root;
+        if (currentEdge) {
+            while (currentEdge && currentEdge.left !== null) {
+                currentEdge = currentEdge.left;
+            }
+            return currentEdge.key;
+        } else {
+            return null;
+        }
+    }
+
+    findMaxValue() {
+        let currentEdge = this.root;
+        if (currentEdge) {
+            while (currentEdge && currentEdge.right !== null) {
+                currentEdge = currentEdge.right;
+            }
+            return currentEdge.key;
+        } else {
+            return null;
+        }
+    }
+
+    findValue(key: number) {
+        return this.searchEdge(this.root, key)
+    };
+
+    searchEdge(edge: edgeType | null, key: number): boolean {
+        if (edge === null) {
+            return false;
+        }
+
+        if (edge.key) {
+            if (key > edge.key) {
+                return this.searchEdge(edge.right, key)
+            } else if (key < edge.key) {
+                return this.searchEdge(edge.left, key)
+            } else { return true; }
+        }
+
+        return false;
+    }
 }
 
 const bst = new BinarySearchTree(10);
@@ -103,6 +149,5 @@ bst.insert(16)
 bst.insert(4)
 bst.insert(18)
 
-bst.traverseTree()
 
 export { BinarySearchTree }

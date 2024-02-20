@@ -48,8 +48,11 @@ var BinarySearchTree = /** @class */ (function () {
     };
     BinarySearchTree.prototype.inOrderTraversalNode = function (edge, callBack) {
         if (edge !== null) {
+            console.log('Line 58: Value of edge.key = ' + edge.key);
             this.inOrderTraversalNode(edge.left, callBack);
+            console.log('Line 60: Value of edge.key = ' + edge.key);
             callBack(edge.key);
+            console.log('Line 62: Value of edge.key = ' + edge.key);
             this.inOrderTraversalNode(edge.right, callBack);
         }
     };
@@ -82,6 +85,51 @@ var BinarySearchTree = /** @class */ (function () {
                     this.inOrderTraversalNode(this.root, this.printEdgeKey);
             }
     };
+    BinarySearchTree.prototype.findMinValue = function () {
+        var currentEdge = this.root;
+        if (currentEdge) {
+            while (currentEdge && currentEdge.left !== null) {
+                currentEdge = currentEdge.left;
+            }
+            return currentEdge.key;
+        }
+        else {
+            return null;
+        }
+    };
+    BinarySearchTree.prototype.findMaxValue = function () {
+        var currentEdge = this.root;
+        if (currentEdge) {
+            while (currentEdge && currentEdge.right !== null) {
+                currentEdge = currentEdge.right;
+            }
+            return currentEdge.key;
+        }
+        else {
+            return null;
+        }
+    };
+    BinarySearchTree.prototype.findValue = function (key) {
+        return this.searchEdge(this.root, key);
+    };
+    ;
+    BinarySearchTree.prototype.searchEdge = function (edge, key) {
+        if (edge === null) {
+            return false;
+        }
+        if (edge.key) {
+            if (key > edge.key) {
+                return this.searchEdge(edge.right, key);
+            }
+            else if (key < edge.key) {
+                return this.searchEdge(edge.left, key);
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    };
     return BinarySearchTree;
 }());
 var bst = new BinarySearchTree(10);
@@ -92,5 +140,4 @@ bst.insert(6);
 bst.insert(16);
 bst.insert(4);
 bst.insert(18);
-bst.traverseTree();
 export { BinarySearchTree };
