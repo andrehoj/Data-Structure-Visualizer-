@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from "./Node.js";
 var LinkedList = /** @class */ (function () {
     function LinkedList() {
         this.head = null;

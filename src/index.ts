@@ -200,4 +200,5 @@ class LinkedList {
         return nodeContainer;
     }
 }
+
 const ll = new LinkedList();

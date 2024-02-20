@@ -1,5 +1,5 @@
-import Node from "./Node";
-import { nodetype } from "./Node";
+import Node from "./Node.js";
+import { nodetype } from "./Node.js";
 
 class LinkedList {
   private head: nodetype | null;
