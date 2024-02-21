@@ -48,11 +48,8 @@ var BinarySearchTree = /** @class */ (function () {
     };
     BinarySearchTree.prototype.inOrderTraversalNode = function (edge, callBack) {
         if (edge !== null) {
-            console.log('Line 58: Value of edge.key = ' + edge.key);
             this.inOrderTraversalNode(edge.left, callBack);
-            console.log('Line 60: Value of edge.key = ' + edge.key);
             callBack(edge.key);
-            console.log('Line 62: Value of edge.key = ' + edge.key);
             this.inOrderTraversalNode(edge.right, callBack);
         }
     };
@@ -130,6 +127,30 @@ var BinarySearchTree = /** @class */ (function () {
         }
         return false;
     };
+    BinarySearchTree.prototype.removeEdge = function (parentEdge, key) {
+        if (parentEdge === null) {
+            return null;
+        }
+        if (parentEdge.key) {
+            if (key < parentEdge.key) {
+                parentEdge.left = this.removeEdge(parentEdge.left, key);
+            }
+            else if (key > parentEdge.key) {
+                parentEdge.right = this.removeEdge(parentEdge.right, key);
+            }
+            else {
+                if (parentEdge.left === null) {
+                    return parentEdge.right;
+                }
+                else if (parentEdge.right === null) {
+                    return parentEdge.left;
+                }
+                parentEdge.key = this.findMinValue(parentEdge.right);
+                parentEdge.right = this.removeEdge(parentEdge.right, parentEdge.key);
+            }
+        }
+        return parentEdge;
+    };
     return BinarySearchTree;
 }());
 var bst = new BinarySearchTree(10);
@@ -140,4 +161,6 @@ bst.insert(6);
 bst.insert(16);
 bst.insert(4);
 bst.insert(18);
+bst.removeEdge(bst.root, 18);
+bst.traverseTree();
 export { BinarySearchTree };

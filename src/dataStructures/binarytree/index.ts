@@ -55,11 +55,8 @@ class BinarySearchTree {
 
     inOrderTraversalNode(edge: edgeType, callBack: (key: number) => void) {
         if (edge !== null) {
-            console.log('Line 58: Value of edge.key = ' + edge.key)
             this.inOrderTraversalNode(edge.left as edgeType, callBack)
-            console.log('Line 60: Value of edge.key = ' + edge.key)
             callBack(edge.key as number)
-            console.log('Line 62: Value of edge.key = ' + edge.key)
             this.inOrderTraversalNode(edge.right as edgeType, callBack)
         }
     };
@@ -137,6 +134,36 @@ class BinarySearchTree {
 
         return false;
     }
+
+    removeEdge(parentEdge: edgeType | null, key: number | null) {
+        if (parentEdge === null) {
+            return null;
+        }
+
+        if (parentEdge.key) {
+            if (key < parentEdge.key) {
+                parentEdge.left = this.removeEdge(parentEdge.left, key);
+            } else if (key > parentEdge.key) {
+                parentEdge.right = this.removeEdge(parentEdge.right, key);
+            } else {
+
+                if (parentEdge.left === null) {
+                    return parentEdge.right;
+                } else if (parentEdge.right === null) {
+                    return parentEdge.left;
+                }
+
+
+                parentEdge.key = this.findMinValue(parentEdge.right);
+
+
+                parentEdge.right = this.removeEdge(parentEdge.right, parentEdge.key);
+            }
+        }
+        return parentEdge;
+    }
+
+
 }
 
 const bst = new BinarySearchTree(10);
@@ -148,6 +175,10 @@ bst.insert(6)
 bst.insert(16)
 bst.insert(4)
 bst.insert(18)
+bst.removeEdge(bst.root, 18)
+bst.traverseTree()
+
+
 
 
 export { BinarySearchTree }
