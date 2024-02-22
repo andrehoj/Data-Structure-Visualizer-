@@ -1,13 +1,17 @@
 import Node from "./Node.js";
 import { nodetype } from "./Node.js";
 
-class LinkedList {
+export class LinkedList {
   private head: nodetype | null;
   private size: number;
 
   constructor() {
     this.head = null;
     this.size = 0;
+  }
+
+  getHead() {
+    return this.head;
   }
 
   // adds an element at the end

@@ -135,7 +135,7 @@ class BinarySearchTree {
         return false;
     }
 
-    removeEdge(parentEdge: edgeType | null, key: number | null) {
+    removeEdge(parentEdge: edgeType | null, key: number) {
         if (parentEdge === null) {
             return null;
         }
@@ -152,12 +152,9 @@ class BinarySearchTree {
                 } else if (parentEdge.right === null) {
                     return parentEdge.left;
                 }
+                parentEdge.key = this.findMinValue();
 
-
-                parentEdge.key = this.findMinValue(parentEdge.right);
-
-
-                parentEdge.right = this.removeEdge(parentEdge.right, parentEdge.key);
+                parentEdge.right = this.removeEdge(parentEdge.right, parentEdge.key as number);
             }
         }
         return parentEdge;
@@ -175,10 +172,7 @@ bst.insert(6)
 bst.insert(16)
 bst.insert(4)
 bst.insert(18)
-bst.removeEdge(bst.root, 18)
+bst.removeEdge(bst.root, 8)
 bst.traverseTree()
-
-
-
 
 export { BinarySearchTree }

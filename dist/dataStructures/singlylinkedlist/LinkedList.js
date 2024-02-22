@@ -4,6 +4,9 @@ var LinkedList = /** @class */ (function () {
         this.head = null;
         this.size = 0;
     }
+    LinkedList.prototype.getHead = function () {
+        return this.head;
+    };
     // adds an element at the end
     // of list
     LinkedList.prototype.append = function (element) {
