@@ -48,3 +48,6 @@ class HashTable {
         return hash % 37;
     }
 }
+
+const table = new HashTable();
+
