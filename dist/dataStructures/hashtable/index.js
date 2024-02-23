@@ -41,3 +41,4 @@ var HashTable = /** @class */ (function () {
     };
     return HashTable;
 }());
+var table = new HashTable();
