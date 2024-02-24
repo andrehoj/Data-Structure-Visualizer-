@@ -20,6 +20,7 @@ var ArySortingClass = /** @class */ (function () {
         this.ary[indexTwo] = temp;
     };
     ArySortingClass.prototype.bubbleSort = function () {
+        this.printAry();
         for (var i = 0; i < this.length; i++) {
             // - i: because we dont need to visit the last element since we know its sorted 
             for (var x = 0; x < this.length - 1 - i; x++) {
@@ -27,13 +28,13 @@ var ArySortingClass = /** @class */ (function () {
                     this.swap(x, x + 1);
                 }
                 ;
+                this.printAry();
             }
         }
+        this.printAry();
         return this;
     };
     ArySortingClass.prototype.selectionSort = function () {
-        // 0 1 2 3
-        //[5,4,3,2]
         var minIndex;
         for (var i = 0; i < this.length - 1; i++) {
             minIndex = i;
@@ -48,11 +49,12 @@ var ArySortingClass = /** @class */ (function () {
         }
         return this;
     };
-    ArySortingClass.prototype.insertionSort = function () { };
+    ArySortingClass.prototype.insertionSort = function () {
+    };
     ArySortingClass.prototype.heapSort = function () { };
     ArySortingClass.prototype.quickSort = function () { };
     ArySortingClass.prototype.MergeSort = function () { };
     return ArySortingClass;
 }());
-new ArySortingClass(8).printAry().selectionSort().printAry();
+new ArySortingClass(8).bubbleSort();
 export {};

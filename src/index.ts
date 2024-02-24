@@ -45,7 +45,7 @@ class LinkedList {
             const index = parseInt(indexInput.val() as string);
             this.insertAtIndex(value, index);
         });
-
+        
         $(this.removeNodeBtn).on("click", (e) => {
             try {
                 e.stopPropagation();

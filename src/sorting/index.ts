@@ -33,6 +33,7 @@ class ArySortingClass {
                 if (this.ary[x] > this.ary[x + 1]) {
                     this.swap(x, x + 1)
                 };
+
             }
         }
         return this
@@ -54,7 +55,11 @@ class ArySortingClass {
         return this;
     }
 
-    insertionSort() { }
+    insertionSort() {
+        // [12, 11, 13, 5 , 6]
+
+
+    }
 
     heapSort() { }
 
@@ -63,4 +68,4 @@ class ArySortingClass {
     MergeSort() { }
 }
 
-new ArySortingClass(8).printAry().selectionSort().printAry();
+new ArySortingClass(8).insertionSort();
