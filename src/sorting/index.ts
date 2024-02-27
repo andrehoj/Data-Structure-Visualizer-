@@ -58,7 +58,21 @@ class ArySortingClass {
     insertionSort() {
         // [12, 11, 13, 5 , 6]
 
+        let j, temp;
 
+        for (let i = 0; i < this.length; i++) {
+            j = i;
+
+            temp = this.ary[i];
+
+            while (j > 0 && this.ary[j - 1] > temp) {
+                this.ary[j] = this.ary[j - 1];
+                j--
+            }
+
+            this.ary[j] = temp
+        }
+        return this
     }
 
     heapSort() { }
@@ -67,5 +81,5 @@ class ArySortingClass {
 
     MergeSort() { }
 }
-
-new ArySortingClass(8).insertionSort();
+console.log('hello')
+new ArySortingClass(8).printAry().insertionSort().printAry();

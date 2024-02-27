@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Node = /** @class */ (function () {
     function Node(element) {
         this.element = element;
@@ -5,4 +7,5 @@ var Node = /** @class */ (function () {
     }
     return Node;
 }());
-export default Node;
+exports.default = Node;
+//# sourceMappingURL=Node.js.map

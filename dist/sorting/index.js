@@ -1,3 +1,4 @@
+"use strict";
 var ArySortingClass = /** @class */ (function () {
     function ArySortingClass(length) {
         this.ary = [];
@@ -20,7 +21,6 @@ var ArySortingClass = /** @class */ (function () {
         this.ary[indexTwo] = temp;
     };
     ArySortingClass.prototype.bubbleSort = function () {
-        this.printAry();
         for (var i = 0; i < this.length; i++) {
             // - i: because we dont need to visit the last element since we know its sorted 
             for (var x = 0; x < this.length - 1 - i; x++) {
@@ -28,10 +28,8 @@ var ArySortingClass = /** @class */ (function () {
                     this.swap(x, x + 1);
                 }
                 ;
-                this.printAry();
             }
         }
-        this.printAry();
         return this;
     };
     ArySortingClass.prototype.selectionSort = function () {
@@ -50,11 +48,24 @@ var ArySortingClass = /** @class */ (function () {
         return this;
     };
     ArySortingClass.prototype.insertionSort = function () {
+        // [12, 11, 13, 5 , 6]
+        var j, temp;
+        for (var i = 0; i < this.length; i++) {
+            j = i;
+            temp = this.ary[i];
+            while (j > 0 && this.ary[j - 1] > temp) {
+                this.ary[j] = this.ary[j - 1];
+                j--;
+            }
+            this.ary[j] = temp;
+        }
+        return this;
     };
     ArySortingClass.prototype.heapSort = function () { };
     ArySortingClass.prototype.quickSort = function () { };
     ArySortingClass.prototype.MergeSort = function () { };
     return ArySortingClass;
 }());
-new ArySortingClass(8).bubbleSort();
-export {};
+console.log('hello');
+new ArySortingClass(8).printAry().insertionSort().printAry();
+//# sourceMappingURL=index.js.map

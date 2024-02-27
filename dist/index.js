@@ -1,3 +1,4 @@
+"use strict";
 var addNodeBtnStart = document.getElementById("insert-node-start");
 var addNodeBtnEnd = document.getElementById("insert-node-end");
 var linkedListContainer = document.getElementById("ll-container");
@@ -175,4 +176,4 @@ var LinkedList = /** @class */ (function () {
     return LinkedList;
 }());
 var ll = new LinkedList();
-export {};
+//# sourceMappingURL=index.js.map

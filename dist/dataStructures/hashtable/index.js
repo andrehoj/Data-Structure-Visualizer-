@@ -1,4 +1,6 @@
-import { LinkedList } from "../singlylinkedlist/LinkedList.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var LinkedList_js_1 = require("../singlylinkedlist/LinkedList.js");
 // using seperate chaining
 // ll uses a number for value
 var HashTable = /** @class */ (function () {
@@ -24,7 +26,7 @@ var HashTable = /** @class */ (function () {
     HashTable.prototype.put = function (key, value) {
         var position = this.loseloseHash(key);
         if (this.table[position] === undefined) {
-            this.table[position] = new LinkedList();
+            this.table[position] = new LinkedList_js_1.LinkedList();
         }
         ;
         this.table[position].append(value);
@@ -42,3 +44,4 @@ var HashTable = /** @class */ (function () {
     return HashTable;
 }());
 var table = new HashTable();
+//# sourceMappingURL=index.js.map

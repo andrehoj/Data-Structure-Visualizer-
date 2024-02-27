@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BinarySearchTree = void 0;
 var Edge = /** @class */ (function () {
     function Edge(key) {
         this.key = key;
@@ -153,6 +156,7 @@ var BinarySearchTree = /** @class */ (function () {
     };
     return BinarySearchTree;
 }());
+exports.BinarySearchTree = BinarySearchTree;
 var bst = new BinarySearchTree(10);
 bst.insert(12);
 bst.insert(8);
@@ -163,4 +167,4 @@ bst.insert(4);
 bst.insert(18);
 bst.removeEdge(bst.root, 8);
 bst.traverseTree();
-export { BinarySearchTree };
+//# sourceMappingURL=index.js.map

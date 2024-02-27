@@ -1,3 +1,4 @@
+"use strict";
 var Dictionary = /** @class */ (function () {
     function Dictionary() {
         this.items = {};
@@ -54,4 +55,4 @@ var Dictionary = /** @class */ (function () {
 }());
 ;
 var map = new Dictionary();
-export {};
+//# sourceMappingURL=index.js.map

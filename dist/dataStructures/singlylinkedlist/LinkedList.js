@@ -1,4 +1,7 @@
-import Node from "./Node.js";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LinkedList = void 0;
+var Node_js_1 = require("./Node.js");
 var LinkedList = /** @class */ (function () {
     function LinkedList() {
         this.head = null;
@@ -11,7 +14,7 @@ var LinkedList = /** @class */ (function () {
     // of list
     LinkedList.prototype.append = function (element) {
         // creates a new node
-        var node = new Node(element);
+        var node = new Node_js_1.default(element);
         // to store current node
         var current = null;
         // if list is Empty add the
@@ -39,7 +42,7 @@ var LinkedList = /** @class */ (function () {
         }
         else {
             // creates a new node
-            var node = new Node(element);
+            var node = new Node_js_1.default(element);
             var current = void 0, previous = void 0;
             current = this.head;
             // add the element to the
@@ -161,4 +164,5 @@ var LinkedList = /** @class */ (function () {
     };
     return LinkedList;
 }());
-export { LinkedList };
+exports.LinkedList = LinkedList;
+//# sourceMappingURL=LinkedList.js.map
