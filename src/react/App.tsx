@@ -1,10 +1,13 @@
 import React from "react";
+import StackContainer from "./stack/StackContainer";
+import QueueContainer from "./queue/QueueContainer";
 
 function App() {
   return (
-    <h1>
-    React portion of application
-    </h1>
+    <>
+      <StackContainer />
+      <QueueContainer />
+    </>
   );
 }
 

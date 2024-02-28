@@ -8,7 +8,7 @@ module.exports = {
     filename: "bundle.js",
   },
   devtool: "inline-source-map",
-  devServer: { port: 3030 },
+  devServer: { port: 3000 },
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx"],
   },

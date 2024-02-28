@@ -1,0 +1,14 @@
+.queue-item {
+  width: 25px;
+  height: 75px;
+  padding: 5px;
+  border: green 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.queue-container {
+  display: flex;
+  direction: row;
+}
