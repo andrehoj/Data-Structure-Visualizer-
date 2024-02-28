@@ -79,7 +79,7 @@ class ArySortingClass {
 
     quickSort() { }
 
-    MergeSort() { }
+    mergeSort() { }
 }
 console.log('hello')
 new ArySortingClass(8).printAry().insertionSort().printAry();

@@ -1,6 +1,6 @@
-const addNodeBtnStart = document.getElementById("insert-node-start");
-const addNodeBtnEnd = document.getElementById("insert-node-end");
-const linkedListContainer = document.getElementById("ll-container");
+import "./css/index.css"
+import "./css/reset.css"
+import "./css//linkedList/node.css"
 
 interface NodeType {
     value: number;
@@ -45,7 +45,7 @@ class LinkedList {
             const index = parseInt(indexInput.val() as string);
             this.insertAtIndex(value, index);
         });
-        
+
         $(this.removeNodeBtn).on("click", (e) => {
             try {
                 e.stopPropagation();
