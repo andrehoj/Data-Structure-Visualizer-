@@ -1,0 +1,42 @@
+.dictionary-container {
+  border: thin rgb(46, 185, 125) solid;
+  display: flex;
+  width: fit-content;
+  gap: 50px;
+  padding: 20px;
+}
+
+.keys-title {
+  text-align: center;
+}
+
+.key-table {
+  border: thin rgb(140, 35, 163) solid;
+  padding: 20px;
+}
+
+.table-item {
+  position: relative;
+  border: green 1px solid;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.table-item > p {
+  text-align: center;
+}
+
+.table-container {
+  border: green 1px solid;
+  padding: 15px;
+}
+
+.arrow-dot {
+  position: absolute;
+  left: 72px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border: green 1px solid;
+  border-radius: 50%;
+}

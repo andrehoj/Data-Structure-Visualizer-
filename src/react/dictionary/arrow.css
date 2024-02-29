@@ -1,0 +1,44 @@
+.mainarrow-container {
+  position: absolute;
+  left: 1px;
+  top: 12px;
+}
+
+.arrowhead-container {
+  position: absolute;
+  left: 150px;
+  top: 5px;
+}
+
+.arrow-dot {
+  position: absolute;
+  left: 72px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border: green 1px solid;
+  border-radius: 50%;
+}
+
+.arrow-line {
+  width: 70px;
+  position: absolute;
+  left: 84px;
+  top: 5px;
+  background-color: #0f0;
+  height: 1px;
+}
+
+.arrow-cross-top {
+  width: 20px;
+  background-color: #0f0;
+  height: 4px;
+  transform: rotate(35deg);
+}
+
+.arrow-cross-bottom {
+  width: 20px;
+  background-color: #0f0;
+  height: 4px;
+  transform: rotate(-35deg);
+}
